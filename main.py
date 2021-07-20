@@ -1,16 +1,15 @@
-# This is a sample Python script.
+# Putthipong Phukhansung 633040224-3
+def compute_avg_list(n):
+    number = input("Enter %d positive numbers:"%n).split()
+    num = list(map(float,number))
+    print("Numbers are",end=" ")
+    print(list(number))
+    average = sum(num)/n
+    return average
+    
+if _name_ == '_main_':
+    average = computer_avg_list(5)
+    print("The total sum is %.1f"%average)
+    average = computer_avg_list(3)
+    print("The total sum is %.1f"%average)
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
