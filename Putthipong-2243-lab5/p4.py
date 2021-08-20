@@ -7,6 +7,7 @@ Problem 4
 
 def get_float(arg):
     while True:
+
         try:
             num = input(f"Please enter the {arg} operand ('q' to quit): ")
             if num == "q" or num == 'Q':
@@ -23,20 +24,19 @@ def robust_calculator():
     global n1
     global n2
 
-
     while True:
-
         n1 = get_float("first ")
         if n1 == 'q'or n1 == 'Q':
             break
         n2 = get_float("second ")
         if n2 == "q" or n2 == "Q":
             break
-
+        
         calculator()
 
 
 def calculator():
+
     try:
         input_operator = input("please enter an operator (+,-,*,/)")
         if input_operator not in "(+, -, *, /)":
@@ -53,6 +53,7 @@ def calculator():
             result = "Unknow opreator"
     except ZeroDivisionError:
         print("Cannot divide by zero ")
+
 
     if input_operator  in ('+','-','*','/'):
         math = input("Enter out format (float, int): ")
