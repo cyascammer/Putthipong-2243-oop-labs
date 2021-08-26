@@ -1,0 +1,259 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Scores" sid="169706086108291" static="0" type="number">0</variable>
+        <variable constant="0" name="Timer" sid="112267175437119" static="0" type="number">30</variable>
+        <event-block sid="669000237378663">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="635956718210921" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="828090462326807" type="Mouse">
+                    <param id="0" name="Cursor style">7</param>
+                </action>
+                <action id="-9" name="Destroy" sid="477202628379178" type="hp" />
+                <action id="-9" name="Destroy" sid="902241689435084" type="blood" />
+                <action id="-4" name="Set layer visible" sid="396200431281938" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="603439828053601" type="Blackscreen">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="348121762727891" type="Next">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+                <action id="-15" name="Set visible" sid="531379626283628" type="Restart">
+                    <param id="0" name="Visibility">0</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="405330014685906">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="233545169784953" type="System">
+                            <param id="0" name="Object">cloud</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="365355356729308" type="cloud">
+                            <param id="0" name="Speed">random(50,200)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="249688670879357">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="464052168076928" type="System" />
+            </conditions>
+            <actions>
+                <action id="-3" name="Set position" sid="167158976178020" type="crosshair">
+                    <param id="0" name="X">Mouse.X</param>
+                    <param id="1" name="Y">Mouse.Y</param>
+                </action>
+                <action id="-4" name="Set position to another object" sid="829204310502610" type="hp">
+                    <param id="0" name="Object">b1</param>
+                    <param id="1" name="Image point (optional)">1</param>
+                </action>
+                <action id="3" name="Set progress" sid="512235111211480" type="hp">
+                    <param id="0" name="Value">b1.hp</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="549307428764764">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="121771134670294" type="b1">
+                    <param id="0" name="Object">border</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="707385827892258">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="858520104365748" type="border">
+                            <param id="0" name="Instance variable">b1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="719042070868237" type="b1">
+                            <param id="0" name="Angle">180</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="482408238474060" type="b1">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="902311374312099">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="260789474919451" type="border">
+                            <param id="0" name="Instance variable">b1</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="3" name="Set angle of motion" sid="144977598604300" type="b1">
+                            <param id="0" name="Angle">0</param>
+                        </action>
+                        <action id="7" name="Set mirrored" sid="684961846577230" type="b1">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="614697925583780">
+            <conditions>
+                <condition id="6" name="On object clicked" sid="462979065719855" type="Mouse">
+                    <param id="0" name="Mouse button">0</param>
+                    <param id="1" name="Click type">0</param>
+                    <param id="2" name="Object clicked">b1</param>
+                </condition>
+                <condition id="1" name="Is overlapping another object" sid="204484974518734" type="crosshair">
+                    <param id="0" name="Object">b1</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-12" name="Subtract from" sid="632942625140865" type="b1">
+                    <param id="0" name="Instance variable">hp</param>
+                    <param id="1" name="Value">20</param>
+                </action>
+                <action id="4" name="Set animation" sid="402754169289613" type="b1">
+                    <param id="0" name="Animation">&quot;die&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Spawn another object" sid="868813395581524" type="b1">
+                    <param id="0" name="Object">blood</param>
+                    <param id="1" name="Layer">&quot;main&quot;</param>
+                    <param id="2" name="Image point">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="894737611142963">
+            <conditions>
+                <condition id="2" name="Is playing" sid="918808767412953" type="b1">
+                    <param id="0" name="Animation">&quot;die&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-16" name="Wait" sid="295070651598640" type="System">
+                    <param id="0" name="Seconds">0.5</param>
+                </action>
+                <action id="4" name="Set animation" sid="233906929697578" type="b1">
+                    <param id="0" name="Animation">&quot;fly&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="466411254057030">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="606042095893539" type="b1">
+                    <param id="0" name="Instance variable">hp</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="979287829556744" type="b1" />
+                <action id="-10" name="Add to" sid="111960540530979" type="System">
+                    <param id="0" name="Variable">Scores</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="551374754235501">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="114014223899537" type="System">
+                    <param id="0" name="Interval (seconds)">2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-3" name="Create object" sid="182682929182056" type="System">
+                    <param id="0" name="Object to create">b1</param>
+                    <param id="1" name="Layer">&quot;main&quot;</param>
+                    <param id="2" name="X">create.X</param>
+                    <param id="3" name="Y">create.Y</param>
+                </action>
+            </actions>
+            <sub-events>
+                <event-block sid="144735980165569">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="830896300745415" type="System">
+                            <param id="0" name="Object">b1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-3" name="Create object" sid="448005057447119" type="System">
+                            <param id="0" name="Object to create">hp</param>
+                            <param id="1" name="Layer">&quot;main&quot;</param>
+                            <param id="2" name="X">b1.ImagePointX(1)</param>
+                            <param id="3" name="Y">b1.ImagePointY(1)</param>
+                        </action>
+                        <action id="-25" name="Move to bottom" sid="795704183831730" type="b1" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="369170054359579">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="462424708480732" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set text" sid="452057420915661" type="Text">
+                    <param id="0" name="Text">Timer</param>
+                </action>
+                <action id="0" name="Set text" sid="263055075115565" type="Text">
+                    <param id="0" name="Text">Scores</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="927027863148545">
+            <conditions>
+                <condition id="-6" name="Every X seconds" sid="897187594568438" type="System">
+                    <param id="0" name="Interval (seconds)">1.0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Subtract from" sid="416027405355902" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="299757511837087">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="327584845086414" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Comparison">3</param>
+                    <param id="2" name="Value">0</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Set value" sid="312829137645071" type="System">
+                    <param id="0" name="Variable">Timer</param>
+                    <param id="1" name="Value">0</param>
+                </action>
+                <action id="-13" name="Set time scale" sid="471176301131152" type="System">
+                    <param id="0" name="Time scale">0</param>
+                </action>
+                <action id="-4" name="Set layer visible" sid="899803529409497" type="System">
+                    <param id="0" name="Layer">0</param>
+                    <param id="1" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="378447065357846" type="Restart">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="701049242576182" type="Next">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+                <action id="-15" name="Set visible" sid="637313380294314" type="Blackscreen">
+                    <param id="0" name="Visibility">1</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
