@@ -2,6 +2,7 @@
 Putthipong Phukhansung 
 633040224-3
 '''
+
 import random
 
 def compute_avg_list(n):
@@ -38,4 +39,3 @@ def test_compute_avg_list():
 
 if __name__ == '__main__':
     test_compute_avg_list()
-    
