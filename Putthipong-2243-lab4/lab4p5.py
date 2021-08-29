@@ -6,7 +6,9 @@ Problem 5
 
 import logging
 
+
 input_logging = False
+
 
 while not input_logging:
     try:
@@ -20,6 +22,5 @@ while not input_logging:
         logging.debug(f"n = {n1}")
         logging.debug(f"n = {n2}")
         break
-
     except NameError:
         print(" is not giving error code ")
