@@ -14,6 +14,7 @@ while True:
         continue
     else:
         break
- 
+
+
 temp_fah = ((9 * temp_cel) / 5 + 32)
 print(temp_cel, "in Celsius is", temp_fah, "Fahrenheit")

@@ -5,6 +5,7 @@ Puttthipong Phukhansung
 
 student_id = int(input("Enter your student ID : "))
 
+
 while True:
     try:
         midterm_score = float(input("Enter the student's midterm exam mark (0-100) : "))
@@ -27,8 +28,10 @@ while True:
     except ValueError:
         print("Enter a score as a decimal number.")
 
+
 Finalterm = (final_score * 60/100)
 totelscore = Finalterm + Midterm
+
 
 if totelscore >= 80 and totelscore <= 100:
     getgrade = 'A'

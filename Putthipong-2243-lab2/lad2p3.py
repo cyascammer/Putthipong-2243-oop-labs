@@ -13,14 +13,12 @@ def add_number_to_list():
     list1.append(add_list)
     print("After adding an integer", add_list, ", thelist is", list1)
 
-
 def replace_number_in_list():
     print("Finding a number to replace in the list", list1)
     find_list = int(input("Enter a number to find:"))
     replace_list = int(input("Enter a new number to replace:"))
     list2 = [x if x != find_list else replace_list for x in list1]
     print("After replace", find_list, "with",replace_list, ", the new list is", list2)
-
 
 def remove_number_in_list():
     print("Finding a number to remove in the list", list1)
