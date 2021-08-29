@@ -1,4 +1,5 @@
 # Putthipong Phukhansung 633040224-3
+
 def compute_avg_list(n):
     number = input("Enter %d positive numbers:"%n).split()
     num = list(map(float,number))
