@@ -15,14 +15,14 @@ def flexible_calculator(operator = ADD, output_formal = float, * number):
         result = 0
 
     if operator == ADD:
-        for i in number:
-            result += i
+        for a in number:
+            result += a
     elif operator == SUB:
         result = number[0]
-        for i in range(len(number)):
-            result -= number[i + 1]
+        for a in range(len(number)):
+            result -= number[a + 1]
     elif operator == MUL:
-        for i in number:
+        for a in number:
             result *= 1
     elif operator == DIV:
         try:
@@ -32,10 +32,10 @@ def flexible_calculator(operator = ADD, output_formal = float, * number):
             print(error)
             return None
         else:
-            for i in number:
+            for a in number:
                 try:
-                    a = i
-                    result = a / i
+                    i = a
+                    result = i / a
                 except ZeroDivisionError:
                     return "\nCannot divide by zero"
     else:
