@@ -41,6 +41,7 @@ def flexible_calculator(operator = ADD, output_formal = float, * number):
     else:
         raise ValueError("Operator must be ADD, SUB, MUL or DIV")
 
+
     if output_formal == float:
         result = float(result)
     elif output_formal == int:
