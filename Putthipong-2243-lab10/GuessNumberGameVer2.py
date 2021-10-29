@@ -28,30 +28,49 @@ class GuessNumberGameVer2(GuessNumberGameVer1):
         print(f"Answer is {answer}")
         print(f"GuessNumberGame with min number as {self._minNum}, max number as {self._maxNum}, max num of tries as {self._maxTries}")
 
+        gngl.playGame()
+
         while True:
+            print(f"If want to play again? type 'y' to continue or 'q' to quit:")
+            get_input_2 = input(f"Type 'a' to see all your guesses or 'g' to see a guess on a sspecific play:")
+
+            if get_input_2 == 'y':
+                self._guess.clear()
+                numTries = self._maxTrise
+                gngl.playGames()
+                break
+            elif get_input_2 == 'q':
+                exit()
+            elif get_input_2 == 'a':
+                gngl.showGGuesses()
+            elif get_input_2 == 'g':
+                gngl.showSpecific()
+            else:
+                pass
+
+
             maxTries = maxTries - 1
             guess = randint(self._minNum, self._maxNum)
             # print(f"Guess is {guess}")
             if int(guess) == answer:
                 print(f"Congratulations! That's correct")
-                break
-            
+                break            
             elif self._maxTries == 0:
                 if int(guess) < answer:
-                    print(f"Please type a lower number! The number of remain tries is {self._maxTries}")
-                elif int(guess) > answer:
                     print(f"Please type a higher number! The number of remain tries is {self._maxTries}")
+                elif int(guess) > answer:
+                    print(f"Please type a lower number! The number of remain tries is {self._maxTries}")
                 print(f"Sorry, please keep trying")
                 break
-
             elif int(guess) < answer:
                 print(f"Please type a higher number! The number of remain tries is {self._maxTries}")
             elif int(guess) > answer:
-                print(f"Please type a lower number! The number of remain tries is {self._maxTries}")            
+                print(f"Please type a lower number! The number of remain tries is {self._maxTries}")  
 
 
 if __name__ == "__main__":
-    gng1 = GuessNumberGameVer2(5, 6, 1)
-    gng1.playGames()
+    gngl = GuessNumberGameVer2(5, 6, 1)
+    # print(gng)
+    gngl.playGames()
     print("Now let's play only one game")
-    gng1.playGame()
+    gngl.playGame()
